@@ -1,7 +1,7 @@
 <template>
-  <BaseLink v-bind="$attrs" :class="classes">
+  <BaseLinkBtn v-bind="$attrs" :class="classes">
     <slot />
-  </BaseLink>
+  </BaseLinkBtn>
 </template>
 
 <script>

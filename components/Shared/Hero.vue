@@ -4,17 +4,19 @@
       class="Hero__img"
       provider="cloudinary"
       fit="cover"
-      src="louis-hansel-qoPAjwEiUmg-unsplash_creiqg.jpg"
+      :src="imageUrl"
       sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw"
     />
     <div class="Hero__content b-container">
       <div class="Hero__tagline">
         <Heading tag="h1" size="h1" font="sans">
-          Specialty coffee, fresh pastrys & hot food in Burgess Park
+          {{ content.heading }}
         </Heading>
       </div>
       <div class="Hero__footer">
-        <PrimaryButton> View Menu </PrimaryButton>
+        <PrimaryButton :link="content.link">
+          {{ content.link.text }}
+        </PrimaryButton>
       </div>
     </div>
   </div>
@@ -23,6 +25,18 @@
 <script>
 export default {
   name: 'Hero',
+  props: {
+    content: {
+      type: Object,
+      required: true,
+    },
+  },
+  computed: {
+    imageUrl() {
+      const paths = this.content.image.url.split('/')
+      return paths[paths.length - 1]
+    },
+  },
 }
 </script>
 

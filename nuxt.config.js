@@ -45,7 +45,16 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/apollo',
   ],
+
+  /* Apollo Options */
+  apollo: {
+    clientConfigs: {
+      default: '~/apollo/config.js',
+    },
+  },
 
   // Nuxt Image config https://image.nuxtjs.org/
   image: {
