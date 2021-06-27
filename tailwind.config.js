@@ -266,6 +266,7 @@ module.exports = {
         '"Noto Color Emoji"',
       ],
       serif: [
+        'Noto Serif',
         'ui-serif',
         'Georgia',
         'Cambria',
@@ -840,6 +841,7 @@ module.exports = {
     'disabled',
   ],
   variants: {
+    spacing: ['first', 'first', 'last'],
     accessibility: ['responsive', 'focus-within', 'focus'],
     alignContent: ['responsive'],
     alignItems: ['responsive'],
@@ -955,7 +957,7 @@ module.exports = {
     lineHeight: ['responsive'],
     listStylePosition: ['responsive'],
     listStyleType: ['responsive'],
-    margin: ['responsive'],
+    margin: ['responsive', 'first', 'last'],
     maxHeight: ['responsive'],
     maxWidth: ['responsive'],
     minHeight: ['responsive'],

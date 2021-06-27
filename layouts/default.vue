@@ -19,4 +19,10 @@ html {
 
   @apply bg-karki;
 }
+
+.b-container {
+  @apply xl:container 
+    xl:mx-auto
+    px-4;
+}
 </style>

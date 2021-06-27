@@ -6,6 +6,15 @@
     clip-rule="evenodd"
     viewBox="0 0 1080 1080"
   >
+    <circle
+      cx="502"
+      cy="502"
+      r="498.5"
+      fill="#CAC1B3"
+      stroke="#333"
+      stroke-width="7"
+      transform="translate(38 38)"
+    />
     <path
       fill="#333"
       fill-rule="nonzero"
@@ -45,15 +54,6 @@
         r="7.5"
         fill="#333"
         transform="translate(42 37.5)"
-      />
-      <circle
-        cx="502"
-        cy="502"
-        r="498.5"
-        fill="none"
-        stroke="#333"
-        stroke-width="7"
-        transform="translate(38 38)"
       />
     </g>
     <g>

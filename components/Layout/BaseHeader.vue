@@ -1,6 +1,6 @@
 <template>
   <header class="BaseHeader">
-    <nav class="BaseHeader__nav">
+    <nav class="BaseHeader__nav b-container">
       <ul class="BaseHeader__nav-list">
         <li class="BaseHeader__nav-link">
           <NuxtLink to="/">Our Store</NuxtLink>
@@ -9,7 +9,7 @@
           <NuxtLink to="/">Menu</NuxtLink>
         </li>
       </ul>
-      <Logo />
+      <Logo class="BaseHeader__logo" />
       <ul class="BaseHeader__nav-list">
         <li class="BaseHeader__nav-link">
           <NuxtLink to="/">Location</NuxtLink>
@@ -28,7 +28,10 @@ export default {}
 
 <style lang="postcss">
 .BaseHeader {
-  @apply w-full;
+  @apply z-20
+    fixed
+    bg-karki
+    w-full;
 
   height: 120px;
 }
@@ -38,6 +41,13 @@ export default {}
     flex-grow
     items-center
     justify-between;
+
+  height: 120px;
+}
+
+.BaseHeader__logo {
+  @apply z-10
+    self-start;
 }
 
 .BaseHeader__nav-list {
