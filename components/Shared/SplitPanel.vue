@@ -1,6 +1,6 @@
 <template>
   <section class="SplitPanel b-container">
-    <div class="SplitPanel__item">
+    <div class="SplitPanel__item SplitPanel__item--img">
       <NuxtImg
         class="SplitPanel__img"
         provider="cloudinary"
@@ -11,7 +11,7 @@
     </div>
     <div class="SplitPanel__item SplitPanel__item--copy">
       <div class="SplitPanel__copy">
-        <Heading tag="h2" size="h1" font="sans"> Our story </Heading>
+        <!-- <Heading tag="h2" size="h1" font="sans"> Our story </Heading> -->
         <Heading tag="h3" size="h2" font="sans">
           We’re doing it for the community. <strong>All</strong> of our profit
           goes to Charity.
@@ -40,7 +40,8 @@ export default {}
 <style lang="postcss">
 .SplitPanel {
   @apply grid
-    grid-cols-12;
+    grid-cols-12
+    items-center;
 }
 
 .SplitPanel__item {
@@ -50,6 +51,10 @@ export default {}
 
 .SplitPanel__item--copy {
   @apply md:order-first;
+}
+
+.SplitPanel__item--img {
+  @apply mb-8 md:mb-0;
 }
 
 .SplitPanel__img {

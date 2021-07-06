@@ -58,18 +58,21 @@ export default {
     w-full
     h-full
     object-cover
-    opacity-70;
+    opacity-60;
 }
 
 .Hero__content {
   @apply text-white
     z-10
     grid
-    grid-cols-12;
+    grid-cols-12
+    mt-header;
 }
 
 .Hero__tagline {
-  @apply md:col-start-2
+  @apply col-start-1
+    col-span-12
+    md:col-start-2
     md:col-span-9
     lg:col-start-3
     lg:col-span-7
@@ -78,7 +81,9 @@ export default {
 }
 
 .Hero__footer {
-  @apply md:col-start-2
+  @apply col-start-1
+    col-span-12
+    md:col-start-2
     md:col-span-9
     lg:col-start-3
     lg:col-span-7
