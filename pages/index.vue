@@ -39,13 +39,17 @@
 </template>
 
 <script>
-import { homePageQuery } from '~/apollo/queries'
+import { toHead } from 'vue-datocms'
+import { homePageQuery, siteQuery } from '~/apollo/queries'
 
 export default {
   name: 'HomePage',
   apollo: {
     homePage: {
       query: homePageQuery,
+    },
+    site: {
+      query: siteQuery,
     },
   },
 
@@ -320,6 +324,12 @@ export default {
         },
       ],
     }
+  },
+  head() {
+    if (!this.site) {
+      return
+    }
+    return toHead(this.homePage.seo, this.site.favicon)
   },
   // async asyncData({ app, params }) {
   //   try {

@@ -1,9 +1,25 @@
 // eslint-disable-next-line import/no-named-as-default
 import gql from 'graphql-tag'
 
+export const siteQuery = gql`
+  {
+    site: _site {
+      favicon: faviconMetaTags {
+        attributes
+        content
+        tag
+      }
+    }
+  }
+`
 export const homePageQuery = gql`
   {
     homePage {
+      seo: _seoMetaTags {
+        attributes
+        content
+        tag
+      }
       hero {
         heading
         image {
