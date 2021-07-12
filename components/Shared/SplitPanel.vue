@@ -1,40 +1,71 @@
 <template>
   <section class="SplitPanel b-container">
-    <div class="SplitPanel__item SplitPanel__item--img">
+    <div v-if="content.image" class="SplitPanel__item SplitPanel__item--img">
       <NuxtImg
         class="SplitPanel__img"
         provider="cloudinary"
         fit="cover"
-        src="Rectangle_2_q0zu2r.jpg"
+        :src="imageUrl"
         sizes="xs:100vw sm:100vw md:50vw lg:50vw xl:50vw"
       />
     </div>
-    <div class="SplitPanel__item SplitPanel__item--copy">
-      <div class="SplitPanel__copy">
-        <!-- <Heading tag="h2" size="h1" font="sans"> Our story </Heading> -->
-        <Heading tag="h3" size="h2" font="sans">
-          We’re doing it for the community. <strong>All</strong> of our profit
-          goes to Charity.
-        </Heading>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec
-          justo porttitor, Burgess Sports id, ultricies nibh. Ut a metus ut
-          mauris efficitur hendrerit.
-        </p>
-        <p>
-          gravida faucibus fringilla. Praesent quam lacus, vestibulum nec dui
-          quis, porta lobortis mauris. Vivamus nec elementum nulla. Maecenas
-          sodales ornare nisl. Suspendisse potenti. Morbi nec suscipit augue.
-          Donec arcu lectus, bibendum eget tempor eget, convallis ac nisi.
-          Quisque iaculis ut quam non vestibulum.
-        </p>
-      </div>
+    <div v-if="content.copy" class="SplitPanel__item SplitPanel__item--copy">
+      <StructuredText
+        class="SplitPanel__copy"
+        :data="content.copy"
+        :custom-rules="customRules"
+      />
     </div>
   </section>
 </template>
 
 <script>
-export default {}
+import { StructuredText, renderRule } from 'vue-datocms'
+import { isHeading } from 'datocms-structured-text-utils'
+import Heading from '~/components/Shared/Type/Heading.vue'
+
+export default {
+  name: 'SplitPanel',
+
+  components: {
+    StructuredText,
+  },
+
+  props: {
+    content: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  data() {
+    return {
+      customRules: [
+        renderRule(
+          isHeading,
+          ({ adapter: { renderNode: h }, node, children, key }) => {
+            return h(
+              Heading,
+              {
+                key,
+                tag: 'span',
+                size: `h${node.level}`,
+              },
+              children
+            )
+          }
+        ),
+      ],
+    }
+  },
+
+  computed: {
+    imageUrl() {
+      const paths = this.content.image.url.split('/')
+      return paths[paths.length - 1]
+    },
+  },
+}
 </script>
 
 <style lang="postcss">
@@ -54,7 +85,8 @@ export default {}
 }
 
 .SplitPanel__item--img {
-  @apply mb-8 md:mb-0;
+  @apply mb-8 md:mb-0
+    h-full;
 }
 
 .SplitPanel__img {

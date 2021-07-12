@@ -23,11 +23,44 @@ export const homePageQuery = gql`
           url {
             ... on ExternalLinkRecord {
               url
-              _modelApiKey
+              pageType: _modelApiKey
             }
             ... on HomePageRecord {
-              _modelApiKey
+              pageType: _modelApiKey
             }
+          }
+        }
+      }
+      content {
+        ... on MenuBlockRecord {
+          _modelApiKey
+          title
+          menuCategories {
+            heading
+            openByDefault
+            foodItems {
+              title
+              price
+              ingredients
+              description
+            }
+          }
+        }
+        ... on SplitPanelRecord {
+          image {
+            url
+            alt
+            height
+            width
+            filename
+            smartTags
+            focalPoint {
+              x
+              y
+            }
+          }
+          copy {
+            value
           }
         }
       }

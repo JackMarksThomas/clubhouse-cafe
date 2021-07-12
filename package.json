@@ -18,10 +18,12 @@
     "core-js": "^3.9.1",
     "graphql-tag": "^2.12.5",
     "nuxt": "^2.15.3",
+    "vue-datocms": "^1.0.3",
     "vue2-google-maps": "^0.10.7"
   },
   "devDependencies": {
     "@nuxt/image": "^0.4.17",
+    "@nuxtjs/composition-api": "^0.24.6",
     "@nuxtjs/eslint-config": "^6.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/stylelint-module": "^4.0.0",

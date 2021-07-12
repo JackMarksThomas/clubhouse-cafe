@@ -14,7 +14,7 @@
         </Heading>
       </div>
       <div class="Hero__footer">
-        <PrimaryButton :link="content.link">
+        <PrimaryButton :link="content.link.url">
           {{ content.link.text }}
         </PrimaryButton>
       </div>

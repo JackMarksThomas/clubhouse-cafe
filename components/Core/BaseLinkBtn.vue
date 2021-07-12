@@ -40,10 +40,6 @@ export default {
       switch (true) {
         case pageType === 'home_page':
           return `/`
-        case pageType === 'product_page':
-          return `/products/${slug}`
-        case pageType === 'collection_page':
-          return `/collections/${slug}`
         default:
           return `/${slug}`
       }

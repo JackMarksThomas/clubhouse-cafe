@@ -3,7 +3,7 @@
     <nav class="BaseHeader__nav b-container">
       <ul class="BaseHeader__nav-list">
         <li class="BaseHeader__nav-link">
-          <NuxtLink to="/">Our Store</NuxtLink>
+          <NuxtLink to="/">About Us</NuxtLink>
         </li>
         <li class="BaseHeader__nav-link">
           <NuxtLink to="/">Menu</NuxtLink>

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="b-container">
     <footer>©Clubhouse Café</footer>
   </section>
 </template>

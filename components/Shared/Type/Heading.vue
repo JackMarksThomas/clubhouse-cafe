@@ -76,6 +76,10 @@ export default {
 p,
 .t-body {
   @apply mb-5;
+
+  a {
+    @apply opacity-70 underline;
+  }
 }
 
 .t-h1 {

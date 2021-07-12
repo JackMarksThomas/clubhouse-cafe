@@ -2,17 +2,19 @@
   <div>
     <Hero :content="homePage.hero" />
     <div class="SectionsLoop">
-      <SplitPanel />
-
       <!-- Menu Section -->
-      <section class="b-container">
-        <Heading tag="h2" size="h1">Menu</Heading>
-        <Heading tag="h3" size="h3">Drinks</Heading>
-
-        <Disclosure />
-        <Disclosure />
-        <Disclosure />
-      </section>
+      <template v-for="(block, index) in homePage.content">
+        <DisclosureBlock
+          v-if="block.__typename === 'MenuBlockRecord'"
+          :key="index"
+          :content="block"
+        />
+        <SplitPanel
+          v-if="block.__typename === 'SplitPanelRecord'"
+          :key="index"
+          :content="block"
+        />
+      </template>
     </div>
     <section class="b-container">
       <Heading tag="h3" size="h1">Find Us</Heading>
@@ -22,7 +24,6 @@
         :options="{
           styles,
         }"
-        style="width: 500px; height: 300px"
       >
         <!-- <GmapMarker
           v-for="(m, index) in markers"
