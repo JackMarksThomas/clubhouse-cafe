@@ -48,7 +48,7 @@ export default {
   @apply relative
     flex
     items-center
-    bg-gray-900;
+    bg-black;
 }
 
 .Hero__img {
@@ -58,7 +58,7 @@ export default {
     w-full
     h-full
     object-cover
-    opacity-60;
+    opacity-50;
 }
 
 .Hero__content {

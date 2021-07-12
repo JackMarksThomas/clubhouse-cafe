@@ -1,6 +1,6 @@
 <template>
   <section class="b-container">
-    <Heading tag="h2" size="h1">{{ content.title }}</Heading>
+    <Heading tag="h3" size="h3">{{ content.title }}</Heading>
 
     <div class="Disclosures">
       <Disclosure v-for="(category, i) in content.menuCategories" :key="i">

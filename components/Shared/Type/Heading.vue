@@ -83,7 +83,7 @@ p,
 }
 
 .t-h1 {
-  @apply text-6xl 
+  @apply text-5xl 
     mb-16
     md:text-7xl;
 }
@@ -95,7 +95,8 @@ p,
 }
 
 .t-h3 {
-  @apply text-4xl md:text-5xl;
+  @apply text-4xl md:text-5xl
+    mb-10;
 }
 
 .t-h4 {

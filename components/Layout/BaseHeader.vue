@@ -3,19 +3,19 @@
     <nav class="BaseHeader__nav b-container">
       <ul class="BaseHeader__nav-list">
         <li class="BaseHeader__nav-link">
-          <NuxtLink to="/">About Us</NuxtLink>
+          <button @click="jump('#About', { offset: -120 })">About Us</button>
         </li>
         <li class="BaseHeader__nav-link">
-          <NuxtLink to="/">Menu</NuxtLink>
+          <button @click="jump('#Menu')">Menu</button>
         </li>
       </ul>
       <Logo class="BaseHeader__logo" />
       <ul class="BaseHeader__nav-list">
         <li class="BaseHeader__nav-link">
-          <NuxtLink to="/">Location</NuxtLink>
+          <button @click="jump('#Map')">Location</button>
         </li>
         <li class="BaseHeader__nav-link">
-          <NuxtLink to="/">Contact</NuxtLink>
+          <button @click="jump('#Map')">Contact</button>
         </li>
       </ul>
     </nav>
@@ -23,7 +23,17 @@
 </template>
 
 <script>
-export default {}
+import jump from 'jump.js'
+
+export default {
+  name: 'Header',
+
+  data() {
+    return {
+      jump,
+    }
+  },
+}
 </script>
 
 <style lang="postcss">
@@ -56,6 +66,8 @@ export default {}
 
 .BaseHeader__nav-link {
   @apply px-4
+    text-base
+    md:text-xl
     uppercase;
 }
 </style>

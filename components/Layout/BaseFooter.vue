@@ -1,6 +1,6 @@
 <template>
   <section class="b-container">
-    <footer>©Clubhouse Café</footer>
+    <footer class="py-8">©Clubhouse Café</footer>
   </section>
 </template>
 
