@@ -30,7 +30,7 @@
             <span class="font-semibold">Contact:</span>
           </div>
           <span class="col-span-9 text-base">
-            tel: <a href="tel:0747900500">0747900500</a><br />
+            tel: <a href="tel:07458302333">07458 302333</a><br />
             email:
             <a href="mailto:clubhousecafe@burgesssports.org">
               clubhousecafe@burgesssports.org
