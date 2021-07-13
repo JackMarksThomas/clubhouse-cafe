@@ -104,7 +104,8 @@ p,
 }
 
 .t-h5 {
-  @apply text-xl md:text-2xl;
+  @apply text-xl md:text-2xl
+    mb-5;
 }
 
 .t-h6 {
@@ -115,8 +116,11 @@ p,
   @apply uppercase;
 }
 
+em {
+  @apply italic;
+}
+
 strong {
-  @apply font-bold
-    italic;
+  @apply font-bold;
 }
 </style>

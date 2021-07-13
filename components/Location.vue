@@ -3,35 +3,59 @@
     <Heading tag="h3" size="h3">Locations</Heading>
     <div class="Location__container">
       <div class="Location__details">
-        <p class="text-3xl">Clubhouse Café Burgess Park</p>
+        <Heading tag="h5" size="h5" family="sans">
+          Clubhouse Café Burgess Park
+        </Heading>
         <div class="grid grid-cols-12 mb-4">
-          <div class="col-span-2">
+          <div class="col-span-3">
             <span class="font-semibold">Where:</span>
           </div>
-          <address class="col-span-10 text-base">
+          <address class="col-span-9 text-base">
             44 Addington Square,<br />
             Burgess Park,<br />
             SE5 7LA
           </address>
         </div>
         <div class="grid grid-cols-12 mb-4 gap-4">
-          <div class="col-span-2">
+          <div class="col-span-3">
             <span class="font-semibold">Hours:</span>
           </div>
-          <span class="col-span-10 text-base">
+          <span class="col-span-9 text-base">
             7am-5:30pm Mon – Fri<br />
             7:30am-6pm Sat – Sun
           </span>
         </div>
         <div class="grid grid-cols-12 mb-4">
-          <div class="col-span-2">
+          <div class="col-span-3">
             <span class="font-semibold">Contact:</span>
           </div>
-          <span class="col-span-10 text-base">
+          <span class="col-span-9 text-base">
             tel: <a href="tel:0747900500">0747900500</a><br />
             email:
             <a href="mailto:clubhousecafe@burgesssports.org">
               clubhousecafe@burgesssports.org
+            </a>
+          </span>
+        </div>
+        <div class="grid grid-cols-12 mb-4">
+          <div class="col-span-3">
+            <span class="font-semibold">Follow Us:</span>
+          </div>
+          <span class="col-span-9 text-base">
+            <a
+              href="https://www.instagram.com/clubhousecafe1"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              instagram
+            </a>
+            <br />
+            <a
+              href="https://twitter.com/clubhouse_cafe"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              twitter
             </a>
           </span>
         </div>
@@ -78,11 +102,11 @@ export default {
 }
 
 .Location__details {
-  @apply col-span-12 md:col-span-4;
+  @apply col-span-12 md:col-span-5;
 }
 
 .Location__map {
-  @apply col-span-12 md:col-span-8;
+  @apply col-span-12 md:col-span-7;
 
   height: 500px;
 }

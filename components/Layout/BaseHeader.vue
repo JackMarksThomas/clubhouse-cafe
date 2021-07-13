@@ -40,19 +40,26 @@ export default {
 .BaseHeader {
   @apply z-20
     fixed
-    bg-karki
     w-full;
 
   height: 120px;
+
+  @screen md {
+    @apply bg-karki;
+  }
 }
 
 .BaseHeader__nav {
   @apply flex
     flex-grow
     items-center
-    justify-between;
+    justify-center;
 
   height: 120px;
+
+  @screen md {
+    @apply justify-between;
+  }
 }
 
 .BaseHeader__logo {
@@ -61,13 +68,20 @@ export default {
 }
 
 .BaseHeader__nav-list {
-  @apply flex;
+  @apply hidden;
+
+  @screen md {
+    @apply flex;
+  }
 }
 
 .BaseHeader__nav-link {
   @apply px-4
     text-base
-    md:text-xl
-    uppercase;
+    md:text-lg;
+
+  button {
+    @apply uppercase;
+  }
 }
 </style>
