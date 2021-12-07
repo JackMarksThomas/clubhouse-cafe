@@ -21,8 +21,8 @@
             <span class="font-semibold">Hours:</span>
           </div>
           <span class="col-span-9 text-base">
-            7am-5:30pm Mon – Fri<br />
-            7:30am-6pm Sat – Sun
+            8am-4pm Mon – Fri<br />
+            8am-4:30pm Sat – Sun
           </span>
         </div>
         <div class="grid grid-cols-12 mb-4">
