@@ -3,68 +3,47 @@
     <Heading tag="h3" size="h3">Locations</Heading>
     <div class="Location__container">
       <div class="Location__details">
-        <Heading tag="h5" size="h5" family="sans">
-          Clubhouse Café Burgess Park
+        <Heading v-if="location.name" tag="h5" size="h5" family="sans">
+          {{ location.name }}
         </Heading>
-        <div class="grid grid-cols-12 mb-4">
+        <div v-if="location.where" class="grid grid-cols-12 mb-4">
           <div class="col-span-3">
             <span class="font-semibold">Where:</span>
           </div>
-          <address class="col-span-9 text-base">
-            44 Addington Square,<br />
-            Burgess Park,<br />
-            SE5 7LA
-          </address>
+          <address class="col-span-9 text-base" v-html="location.where" />
         </div>
-        <div class="grid grid-cols-12 mb-4 gap-4">
+        <div v-if="location.hours" class="grid grid-cols-12 mb-4 gap-4">
           <div class="col-span-3">
             <span class="font-semibold">Hours:</span>
           </div>
-          <span class="col-span-9 text-base">
-            8am-4pm Mon – Fri<br />
-            8am-4:30pm Sat – Sun
-          </span>
+          <span class="col-span-9 text-base" v-html="location.hours" />
         </div>
-        <div class="grid grid-cols-12 mb-4">
+        <div v-if="location.contact" class="grid grid-cols-12 mb-4">
           <div class="col-span-3">
             <span class="font-semibold">Contact:</span>
           </div>
-          <span class="col-span-9 text-base">
-            tel: <a href="tel:07458302333">07458 302333</a><br />
-            email:
-            <a href="mailto:clubhousecafe@burgesssports.org">
-              clubhousecafe@burgesssports.org
-            </a>
-          </span>
+          <span class="col-span-9 text-base" v-html="location.contact" />
         </div>
-        <div class="grid grid-cols-12 mb-4">
+        <div v-if="location.followUs" class="grid grid-cols-12 mb-4">
           <div class="col-span-3">
             <span class="font-semibold">Follow Us:</span>
           </div>
-          <span class="col-span-9 text-base">
-            <a
-              href="https://www.instagram.com/clubhousecafe1"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              instagram
-            </a>
-            <br />
-            <a
-              href="https://twitter.com/clubhouse_cafe"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              twitter
-            </a>
-          </span>
+          <span class="col-span-9 text-base" v-html="location.followUs" />
         </div>
       </div>
       <GmapMap
+        v-if="
+          location.mapCoOrdinates &&
+          location.mapCoOrdinates.lat &&
+          location.mapCoOrdinates.lng
+        "
         class="Location__map"
         height="100%"
         width="100%"
-        :center="{ lat: 51.4814933, lng: -0.0953476 }"
+        :center="{
+          lat: location.mapCoOrdinates.lat,
+          lng: location.mapCoOrdinates.lng,
+        }"
         :zoom="17"
         :options="{
           styles,
@@ -87,7 +66,12 @@ import mapStyles from '~/const/mapStyles'
 
 export default {
   name: 'Location',
-
+  props: {
+    location: {
+      type: Object,
+      default: () => ({}),
+    },
+  },
   data() {
     return {
       styles: mapStyles,

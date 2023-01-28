@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-named-as-default
-import gql from 'graphql-tag'
+import { gql } from 'graphql-tag'
 
 export const siteQuery = gql`
   {
@@ -8,6 +7,23 @@ export const siteQuery = gql`
         attributes
         content
         tag
+      }
+    }
+  }
+`
+export const footerQuery = gql`
+  {
+    footer {
+      locations {
+        name
+        where
+        hours
+        followUs
+        contact
+        mapCoOrdinates {
+          lat: latitude
+          lng: longitude
+        }
       }
     }
   }

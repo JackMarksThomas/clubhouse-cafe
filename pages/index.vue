@@ -17,13 +17,20 @@
         />
       </template>
     </div>
-    <Location id="Map" />
+    <template v-if="footer.locations.length">
+      <Location
+        v-for="(location, index) in footer.locations"
+        id="Map"
+        :key="index"
+        :location="location"
+      />
+    </template>
   </div>
 </template>
 
 <script>
 import { toHead } from 'vue-datocms'
-import { homePageQuery, siteQuery } from '~/apollo/queries'
+import { homePageQuery, footerQuery, siteQuery } from '~/apollo/queries'
 
 export default {
   name: 'HomePage',
@@ -33,6 +40,9 @@ export default {
     },
     site: {
       query: siteQuery,
+    },
+    footer: {
+      query: footerQuery,
     },
   },
 
