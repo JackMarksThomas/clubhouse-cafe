@@ -3,10 +3,19 @@
     <nav class="BaseHeader__nav b-container">
       <ul class="BaseHeader__nav-list">
         <li class="BaseHeader__nav-link">
+          <button @click="jump('#Menu', { offset: -120 })">Menu</button>
+        </li>
+        <li class="BaseHeader__nav-link">
           <button @click="jump('#About', { offset: -120 })">About Us</button>
         </li>
         <li class="BaseHeader__nav-link">
-          <button @click="jump('#Menu')">Menu</button>
+          <a
+            href="https://burgesssports.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Our Charity
+          </a>
         </li>
       </ul>
       <Logo class="BaseHeader__logo" />
@@ -64,7 +73,10 @@ export default {
 
 .BaseHeader__logo {
   @apply z-10
-    self-start;
+    self-start
+    absolute;
+
+  left: calc(50% - 80px);
 }
 
 .BaseHeader__nav-list {
@@ -81,6 +93,9 @@ export default {
     md:text-lg;
 
   button {
+    @apply uppercase;
+  }
+  a {
     @apply uppercase;
   }
 }

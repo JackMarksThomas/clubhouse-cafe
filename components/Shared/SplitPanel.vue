@@ -98,9 +98,18 @@ export default {
     flex-col
     justify-center
     md:p-8;
-}
 
-.SplitPanel__copy p {
-  @apply max-w-sm;
+  p {
+    @apply max-w-sm;
+  }
+
+  ul {
+    @apply pl-8
+    list-disc;
+
+    p {
+      @apply mb-1;
+    }
+  }
 }
 </style>
